@@ -32,17 +32,17 @@ void revtraverse(struct node *head)
 	
 	struct node* temp;
 	temp = head;
-	while (temp != NULL)
+	while (temp->next != NULL)
         {
-		printf("Data = %d\n", temp->data);
 		temp = temp->next;
 	}
-       temp = temp->prev;
-       while (temp != NULL)
+  
+       while (temp->prev != NULL)
         {
 		printf("Data = %d\n", temp->data);
 		temp = temp->prev;
 	}
+	printf("Data = %d\n", temp->data);
 
 }
 
@@ -240,7 +240,7 @@ int main()
 	while (1) {
 
 		printf("\n\t1 To Traverse list\n");
-		printf("\n\t2 To Reverse Traverse list\n");
+		printf("\t2 To Reverse Traverse list\n");
                 printf("\t3  to create a linked list and add element\n");
 		printf("\t4 For insertion at"
 			" starting\n");
@@ -249,7 +249,7 @@ int main()
 		printf("\t7 For deletion of first element\n");
 		printf("\t8 For deletion of last element\n");
 		printf("\t9 For deletion of element at any position\n");
-		printf("\t10 To exit\n");
+		printf("\t0 To exit\n");
 		printf("\nEnter Choice :\n");
 		scanf("%d", &choice);
 
@@ -283,7 +283,7 @@ int main()
 			head=deleteposition(head);
 			break;
 
-		case 10:
+		case 0:
 			exit(1);
 			break;
 		default:
